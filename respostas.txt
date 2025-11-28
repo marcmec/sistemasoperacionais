@@ -1,0 +1,73 @@
+RESPOSTAS DA ATIVIDADE: PROCESSOS, THREADS E GERENCIAMENTO DE MEMÓRIA 
+
+
+I. Threads e Processos
+
+1. Defina o que é um processo em um sistema operacional.
+É uma instância de um programa em execução, com seu próprio espaço de endereçamento de memória e recursos alocados pelo sistema operacional.
+
+2. Explique o conceito de thread e sua relação com processos.
+Thread é a unidade básica de execução dentro de um processo. Um processo pode ter múltiplas threads que compartilham o mesmo espaço de memória e recursos do processo pai.
+
+3. Cite três diferenças entre processos e threads.
+1. Processos têm memória isolada; threads compartilham a memória do processo.
+2. Criação e troca de contexto de processos são mais lentas.
+3. Comunicação entre processos (IPC) é mais complexa.
+
+4. O que é troca de contexto e quando ela ocorre?
+É o ato de salvar o estado de um processo/thread e carregar o estado de outro para que a CPU possa alternar a execução. Ocorre quando o tempo de execução expira, há espera por E/S ou uma interrupção.
+
+5. Explique condição de corrida (race condition).
+Ocorre quando o resultado de um programa depende da ordem não controlada em que múltiplas threads ou processos acessam e modificam um recurso compartilhado.
+
+6. O que é um deadlock e como ele pode ocorrer em threads?
+É um impasse onde duas ou mais threads ficam esperando indefinidamente por recursos que estão sendo mantidos pelas outras. Ocorre quando threads adquirem recursos em ordens diferentes.
+
+7. Descreva duas vantagens do uso de threads.
+1. Melhor utilização da CPU (paralelismo em multi-core).
+2. Melhor responsividade da aplicação (tarefas em segundo plano).
+
+8. Descreva duas desvantagens do uso de threads.
+1. Maior complexidade de programação e necessidade de sincronização.
+2. Dificuldade de depuração devido à natureza não determinística.
+
+9. Explique a diferença entre paralelismo e concorrência.
+Concorrência é a capacidade de lidar com múltiplas tarefas (alternando a execução); paralelismo é a execução simultânea de múltiplas tarefas em diferentes núcleos de CPU.
+
+10. O que é IPC e cite dois métodos utilizados.
+IPC (Comunicação Interprocessos) é o mecanismo para processos trocarem informações. Métodos: Pipes e Memória Compartilhada.
+
+---
+
+II. Gerenciamento de Memória
+
+11. Explique o que é memória virtual.
+É uma técnica que permite que um programa use um espaço de endereçamento maior que a memória física (RAM), usando o disco como extensão da RAM.
+
+12. O que é paginação (paging)?
+É um esquema de gerenciamento que divide o espaço lógico em páginas e a memória física em frames, usando uma tabela de páginas para mapear a memória de forma não contígua.
+
+13. O que são page faults e quando ocorrem?
+É uma exceção que ocorre quando um processo tenta acessar uma página que está mapeada, mas não está carregada na memória física (RAM).
+
+14. Explique a diferença entre memória lógica e memória física.
+Memória lógica é o endereço gerado pela CPU (virtual); memória física é o endereço real na RAM (hardware).
+
+15. O que é segmentação de memória?
+É um esquema que divide o espaço lógico em segmentos de tamanho variável, correspondentes a unidades lógicas do programa (código, dados, pilha).
+
+16. Explique o algoritmo de substituição LRU.
+LRU (Least Recently Used) é um algoritmo que substitui a página que não foi usada por mais tempo, presumindo que ela será a menos provável de ser usada no futuro próximo.
+
+17. Explique fragmentação interna e externa.
+Fragmentação interna é o espaço desperdiçado dentro de um bloco alocado (comum em paginação). Fragmentação externa é o espaço livre espalhado em pequenos blocos não contíguos.
+
+18. O que é o bit de validade em uma tabela de páginas?
+É um campo que indica se a página correspondente está presente na memória física (válido) ou se está no disco (inválido).
+
+19. Explique o funcionamento básico de um TLB.
+TLB (Translation Lookaside Buffer) é um cache rápido que armazena traduções recentes de endereços lógicos para físicos, acelerando o acesso à memória.
+
+20. O que é swapping no gerenciamento de memória?
+É o processo de mover temporariamente um processo inteiro (ou parte dele) da memória principal (RAM) para o disco e trazê-lo de volta para liberar espaço na RAM.
+
