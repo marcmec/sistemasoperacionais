@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>marcação de territorio</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: url('fundo.jpg') center/cover no-repeat;
+    }
+    .avatar-container {
+      position: absolute;
+      top: -20px;
+      left: 760px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .avatar {
+      width: 64px;
+      height: 64px;
+      animation: animacao 1s steps(1) infinite;
+    }
+    @keyframes animacao {
+      0%   { background: url('img1.png') center/cover no-repeat; }
+      33%  { background: url('img2.png') center/cover no-repeat; }
+      66%  { background: url('img3.png') center/cover no-repeat; }
+      100% { background: url('img1.png') center/cover no-repeat; }
+    }
+    .triangulo {
+      width: 0;
+      height: 0;
+      border-left: 32px solid transparent;
+      border-right: 32px solid transparent;
+      border-top: 32px solid white;
+      animation: piscar 0.5s infinite;
+    }
+    @keyframes piscar {
+      50% { border-top-color: red; }
+    }
+    
+   
+  </style>
+</head>
+<body>
+  <div class="avatar-container">
+    <div class="avatar"></div>
+    <div class="triangulo"></div>
+  </div>
+</body>
+</html>
