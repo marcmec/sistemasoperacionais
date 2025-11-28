@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Nal do Canal Pikomon</title>
+  <style>
+    body {
+      background-color: #1a0e0e;
+      background-image: url("Mapa.jpeg");
+      background-size: cover;      
+      background-position: center; 
+            
+      display: flex;
+      justify-content: center;    
+      align-items: center;      
+      height: 100vh;               
+      margin: 0;           
+    }
+
+    .container {
+      position: absolute;
+      left: 1350px;
+      top: 420px;
+      width: 120px;
+      text-align: center;
+    }
+
+    canvas {
+      width: 70px;
+      height: 70px;
+      image-rendering: pixelated;
+      display: block;
+      margin: 0 auto;
+      background: lightgray; /* só para visualizar, pode remover */
+    }
+
+    .triangulo {
+      width: 0;
+      height: 0;
+      margin: 0 auto;
+      border-left: 35px solid transparent;
+      border-right: 35px solid transparent;
+      border-top: 20px solid rgb(246, 244, 244); /* cor do triângulo */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <canvas id="animacaoCanvas" width="300" height="300"></canvas>
+    <div class="triangulo"></div>
+  </div>
+
+  <script src="Animacao.js"></script>
+</body>
+</html>
